@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-   res.send('Welcome to SmartBrain');
+   res.send(`Welcome to SmartBrain\n${process.env.DATABASE_URL}`);
 });
 
 // app.post('/signin', (req, res) => { signin.handleSignin(req, res, bcrypt, smartBrainDB) }); The same as below
