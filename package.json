@@ -4,18 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start:dev": "set PORT= 3000 && nodemon server.js",
+    "startnode": "node server.js",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "heroku-postbuild": "npm run build"
   },
-  "author": "",
+  "author": "initialsky0",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.4"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "clarifai": "^2.9.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "knex": "^0.21.1",
-    "pg": "^8.2.1"
+    "pg": "^8.2.1",
+    "serve": "^11.3.2"
   }
 }
