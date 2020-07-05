@@ -23,9 +23,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// app.get('/', (req, res) => {
-//    res.send('Welcome to SmartBrain');
-// });
+app.get('/', (req, res) => {
+   res.send('Welcome to SmartBrain');
+});
 
 // app.post('/signin', (req, res) => { signin.handleSignin(req, res, bcrypt, smartBrainDB) }); The same as below
 app.post('/signin', signin.handleSignin(bcrypt, smartBrainDB));
