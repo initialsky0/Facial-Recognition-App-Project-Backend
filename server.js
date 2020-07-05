@@ -11,10 +11,10 @@ const PORT = process.env.PORT;
 const smartBrainDB = knex({
    client: 'pg',
    connection: {
-     host : '127.0.0.1',
-     user : 'postgres',
-     password : process.env.REACT_APP_SERVER_PASSWORD,
-     database : 'smart_brain'
+     host : process.env.DATABASE_URL,
+     ssl: {
+      rejectUnauthorized: false
+    }
    }
  });
 
@@ -24,7 +24,6 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-  console.log(process.env.DATABASE_URL);
   res.send('Welcome to SmartBrain');
 });
 
